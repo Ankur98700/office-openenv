@@ -6,8 +6,12 @@ app = FastAPI()
 class Action(BaseModel):
     action: str
 
-@app.get("/")
+# 👇 REQUIRED MAIN FUNCTION
 def main():
+    return app
+
+@app.get("/")
+def root():
     return {"message": "OpenEnv server running"}
 
 @app.post("/reset")
@@ -24,3 +28,7 @@ def step(action: Action):
         "done": True,
         "info": {}
     }
+
+# 👇 VERY IMPORTANT
+if __name__ == "__main__":
+    main()
