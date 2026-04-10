@@ -1,10 +1,10 @@
 name: office-openenv
-description: AI Office Task Environment
+description: Simple OpenEnv environment
 
 tasks:
-  - name: email_classification
+  - name: email
     difficulty: easy
-  - name: data_cleaning
+  - name: cleaning
     difficulty: medium
-  - name: code_fixing
+  - name: code
     difficulty: hard
