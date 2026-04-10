@@ -1,13 +1,11 @@
-from env import OfficeEnv
+import requests
 
-env = OfficeEnv()
+BASE_URL = "http://localhost:7860"
 
-obs = env.reset()
-print("Task:", obs)
+# test reset
+res = requests.post(f"{BASE_URL}/reset")
+print("Reset:", res.json())
 
-# Dummy action (for testing)
-action = "spam"
-
-obs, reward, done, info = env.step(action)
-
-print("Reward:", reward)
+# test step
+res = requests.post(f"{BASE_URL}/step", json={"action": "spam"})
+print("Step:", res.json())
