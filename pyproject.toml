@@ -1,0 +1,20 @@
+[project]
+name = "office-openenv"
+version = "0.1.0"
+description = "OpenEnv Hackathon Project"
+authors = [{name = "Ankur"}]
+
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "requests",
+    "openenv-core>=0.2.0"
+]
+
+[project.scripts]
+server = "server.app:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
